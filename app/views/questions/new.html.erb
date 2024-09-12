@@ -1,0 +1,38 @@
+
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ </head>
+
+<body>
+
+  <div class="fond-img">
+  <img src="https://cdn.pixabay.com/photo/2024/08/13/10/08/ai-generated-8965623_1280.jpg" alt="modem-pic" id ="school" />
+  </div>
+
+  <div class="intro">
+    <h1>Prêt  à tester votre niveau ?</h1>
+  </div>
+
+  <div class="introbis">
+    <p>
+      Combien font <%= @number1 %> <%= @operation %> <%= @number2 %> ?
+    </p>
+
+    <%= form_with url: questions_path, method: :post do |form| %>
+      <%= form.hidden_field :correct_answer, value: @answer %>
+
+      <%= form.label :answer, "Votre réponse :" %>
+      <%= form.text_field :answer %>
+
+      <%= form.submit "Valider" %>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p style="color: yellow;"><%= flash[:notice] %></p>
+    <% elsif flash[:alert] %>
+      <p style="color: red;"><%= flash[:alert] %></p>
+    <% end %>
+  </div>
+
+</body>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number1: 1
+  number2: 1
+  operation: MyString
+  answer: 1
+
+two:
+  number1: 1
+  number2: 1
+  operation: MyString
+  answer: 1
